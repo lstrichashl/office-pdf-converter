@@ -1,0 +1,31 @@
+{
+  "name": "office-pdf-server",
+  "version": "0.0.1",
+  "description": "Node.js api server for converting office files to pdf",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lstrichashl/office-pdf-converter.git"
+  },
+  "keywords": [
+    "office",
+    "pdf",
+    "libreoffice"
+  ],
+  "dependencies": {
+    "config": "^1.21.0",
+    "express": "^4.14.0",
+    "q": "^1.4.1",
+    "request": "^2.75.0",
+    "uuid4": "^1.0.0"
+  },
+  "author": "Lior Strichash",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lstrichashl/office-pdf-converter/issues"
+  },
+  "homepage": "https://github.com/lstrichashl/office-pdf-converter#readme"
+}
