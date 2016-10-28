@@ -2,5 +2,8 @@
     "Libreoffice": {
         "installationPath": "C:\\Program Files\\LibreOffice 5"
     },
-    "outdir": "C:\\temp"
+    "outdir": "C:\\temp",
+    "supportedMimeTypes": [
+        "?image/jpeg"
+    ]
 }
