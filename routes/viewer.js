@@ -15,16 +15,22 @@ router.use(function(request, response, next){
     request.tempFile = config.get("outdir") + "\\" + request.flowUUID;
     var fileWriteStream = fs.createWriteStream(request.tempFile);
     httpRequest(url, function(error, res, body){
-        if(mimeTypes.isSupportedType(res.headers['content-type'])){
-            next();
+        if(error){
+            error.url = url;
+            next(error);
         }
-        else{
-            logger.warn("mime type " + res.headers['content-type'] + " is not supported");
-            cleanup(request);
-            response.status(415).json({message:"mime type " + res.headers['content-type'] + " is not supported"});
+        else {
+            if (mimeTypes.isSupportedType(res.headers['content-type'])) {
+                next();
+            }
+            else {
+                logger.warn("mime type " + res.headers['content-type'] + " is not supported");
+                cleanup(request);
+                response.status(415)
+                    .json({message: "mime type " + res.headers['content-type'] + " is not supported"});
+            }
         }
     }).pipe(fileWriteStream);
-    //next();
 });
 
 router.use(function(request, response, next){
@@ -32,6 +38,10 @@ router.use(function(request, response, next){
         .then(function(pdfFile){
             request.pdfFile = pdfFile;
             next();
+        })
+        .fail(function(error){
+            error.status = error.status || 500;
+            next(error);
         })
 });
 
