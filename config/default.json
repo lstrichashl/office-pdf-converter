@@ -4,6 +4,6 @@
     },
     "outdir": "C:\\temp",
     "supportedMimeTypes": [
-        "?image/jpeg"
+        "image/jpeg"
     ]
 }

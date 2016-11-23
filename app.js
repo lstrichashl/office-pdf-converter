@@ -10,7 +10,9 @@ var app = express();
 app.use(attacheUUID);
 app.use('/view',viewer);
 app.use('/sanity', sanity);
-app.use('/config', config);
+app.get('/config', function(request, response){
+    response.status(200).json({config: config});
+});
 app.use(errorHandler);
 
 app.listen(3000);
