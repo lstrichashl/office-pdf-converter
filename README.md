@@ -34,6 +34,7 @@ This will help you show office files in web without any microsoft services.
 ## Requirements
 1. install libreoffice from [here](https://www.libreoffice.org/download/libreoffice-fresh/)
 2. config:
+    * outdir - Folder for temp pdf files. Should be always empty.
 ```json
     "port": 3000,
     "Libreoffice": {
