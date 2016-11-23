@@ -38,7 +38,7 @@ This will help you show office files in web without any microsoft services.
 
 ### Custom config fields
 * can support only specific mime types. only and the config below (in the example below only image/jpeg mimetype is will be converted):
-```
+```json
     "supportedMimeTypes": [
         "image/jpeg"
     ]
