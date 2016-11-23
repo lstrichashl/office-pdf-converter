@@ -17,6 +17,11 @@ This will help you show office files in web without any microsoft services.
 
     returns pdf file
 
+    ```http
+    http://localhost:3000/view?url=http://www.stories4kid.com/313667_196.jpg
+    ```
+
+
 * __/sanity__
 
     returns status 200.
@@ -30,6 +35,7 @@ This will help you show office files in web without any microsoft services.
 1. install libreoffice from [here](https://www.libreoffice.org/download/libreoffice-fresh/)
 2. config:
 ```json
+    "port": 3000,
     "Libreoffice": {
         "installationPath": "C:\\Program Files\\LibreOffice 5"
     },
@@ -37,7 +43,7 @@ This will help you show office files in web without any microsoft services.
 ```
 
 ### Custom config fields
-* can support only specific mime types. only and the config below (in the example below only image/jpeg mimetype is will be converted):
+* can support only specific mimetypes. in the example below only files with 'image/jpeg' mimetype is will be converted:
 ```json
     "supportedMimeTypes": [
         "image/jpeg"
